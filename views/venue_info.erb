@@ -1,6 +1,6 @@
-<h1>venue Info Page</h1>
+<h1>Venue Info Page</h1>
 <h2>Name: <%= @venue.name() %></h2>
-<h3>bands:</h3>
+<h3>Bands:</h3>
 
 <% if @bands.any?() %>
   <form action="/venues/<%= @venue.id() %>" method="post">
@@ -26,9 +26,9 @@
 
    <form action="/venues/<%= @venue.id() %>" method="post">
      <input name="_method" type="hidden" value="patch">
+
      <label for="name">Rename the venue:</label>
      <input id="name" name="name" type="text">
-
      <button type="submit">Update</button>
    </form>
 
@@ -37,4 +37,4 @@
    <form action="/venues/<%= @venue.id() %>" method="post">
      <input type="hidden" name="_method" value="delete">
      <button type="submit">Remove venue</button>
-  </form
+  </form>

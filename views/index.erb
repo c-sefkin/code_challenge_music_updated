@@ -1,8 +1,13 @@
 <h1>Venue and Music Portal!</h1>
 <h3>Edit band and venue information here</h3>
 
-<p><a href="/bands">Add a new band</a></p>
-<p><a href="/venues">Add a new venue</a></p>
+<div class="bands-button">
+<p><a href="/bands" role ="button" class="btn btn-info">Add a new band</a></p>
+</div>
+
+<div class="venues-button">
+<p><a href="/venues" role="button" class="btn btn-success">Add a new venue</a></p>
+</div>
 
 <h4>Here are all the venues:</h4>
 
@@ -15,7 +20,7 @@
     <% end %>
   </ul>
   <% else %>
-    <p>There are no venues working here yet!</p>
+    <p>There are no venues listed yet!</p>
   <% end %>
 
 <h4>Here are all the current bands:</h4>
