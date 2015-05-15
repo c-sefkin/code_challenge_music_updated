@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: venue_tracker_development
+
+test:
+  adapter: postgresql
+  database: venue_tracker_test
