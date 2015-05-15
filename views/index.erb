@@ -1,0 +1,14 @@
+<h2>Track Bands and Venues</h2>
+<h3>Music Lovers Delight</h3>
+
+<% if @bands.any? %>
+  <% @bands.each do |band| %>
+    <a href="/bands/<%= band.id() %>" role="button" class="btn btn-info"><%= band.name %></a>
+    <% end %>
+  <% end %>
+
+<div class="venues-button">
+  <p><a href="/add/venues" role="button" class="btn btn-success">View/Add Venues</a></p>
+</div>
+
+  <p><a href="/add/bands" role="button" class="btn btn-primary">View/Add Bands</a></p>
