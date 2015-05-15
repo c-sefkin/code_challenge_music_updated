@@ -1,0 +1,26 @@
+<h1>venue Portal</h1>
+
+<p>Add a venue to Curl Up and Dye:</p>
+
+<form action="/venues" method="post">
+  <label for="name">venue's name:</label>
+  <input id="name" name="name" type="text">
+
+  <button type="submit">Add venue</button>
+</form>
+
+<% if @venues.any?() %>
+  <p>Click on a venue to assign them bands</p>
+
+  <ul>
+    <% @venues.each do |venue| %>
+    <li><a href="/venues/<%= venue.id() %>"><%= venue.name() %></a></li>
+    <% end %>
+  </ul>
+  <% else %>
+  <p>There are no venues added yet!</p>
+  <% end %>
+
+  <p><a href="/bands">See all bands</a></li>
+
+  <p><a href="/">Return home</a></p>

@@ -1,0 +1,26 @@
+<h1>band Portal</h1>
+
+<p>Add a band:</p>
+
+<form action="/bands" method="post">
+  <label for="name">band name:</label>
+  <input id="name" name="name" type="name">
+
+  <button type="submit">Add band</button>
+</form>
+
+<% if @bands.any?() %>
+  <p>Click on a band to assign them to a venue:</p>
+
+  <ul>
+    <% @bands.each do |band| %>
+    <li><a href="/bands/<%= band.id() %>"><%= band.name() %></a></li>
+    <% end %>
+  </ul>
+  <% else %>
+    <p>There are no bands added yet!</p>
+  <% end %>
+
+  <p><a href="/venues">See all venues</a></p>
+
+  <p><a href="/">Return to home page</a></p>

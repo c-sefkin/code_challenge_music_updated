@@ -1,0 +1,23 @@
+<h1 class="main title"><%= @venue.name() %></h1>
+
+<% if @venue.bands == [] %>
+<h3 class="no-value-alert">There are no bands listed for this venue!</h3>
+
+<% else %>
+
+  <h2>Here are the bands that have performed at this venue:</h2>
+  <ul>
+    <% @venue.bands().each do |band| %>
+    <li>
+      <a href="/bands/<%= band.id() %>"><%= band.name()%></a>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+
+
+  <h3>Remove this venue</h3>
+  <form action="/venues/<%= @venue.id() %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit">Delete Venue</button>
+  </form>

@@ -1,0 +1,40 @@
+<h1>venue Info Page</h1>
+<h2>Name: <%= @venue.name() %></h2>
+<h3>bands:</h3>
+
+<% if @bands.any?() %>
+  <form action="/venues/<%= @venue.id() %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <% @bands.each() do |band| %>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="band_ids[]" value="<%= band.id() %>"><%= band.name() %>
+        </label>
+      </div>
+      <% end %>
+      <button type="submit">Add bands</button>
+    </form>
+    <% end %>
+
+    <ul>
+        <% @venue.bands().each() do |band| %>
+        <li><%= band.name()%></li>
+    <% end %>
+   </ul>
+
+   <h3>Update the name of <%=@venue.name() %> </h3>
+
+   <form action="/venues/<%= @venue.id() %>" method="post">
+     <input name="_method" type="hidden" value="patch">
+     <label for="name">Rename the venue:</label>
+     <input id="name" name="name" type="text">
+
+     <button type="submit">Update</button>
+   </form>
+
+
+   <h3>Remove this venue</h3>
+   <form action="/venues/<%= @venue.id() %>" method="post">
+     <input type="hidden" name="_method" value="delete">
+     <button type="submit">Remove venue</button>
+  </form
