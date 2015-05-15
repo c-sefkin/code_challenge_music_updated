@@ -1,4 +1,4 @@
-<h1>band Info Page</h1>
+<h1>Band Info Page</h1>
 <h2>Name: <%= @band.name() %></h2>
 <h3>venues:</h3>
 
@@ -12,7 +12,7 @@
         </label>
       </div>
       <% end %>
-      <button type="submit">Add venues</button>
+      <button type="submit">Add Venues</button>
     </form>
     <% end %>
 
@@ -33,7 +33,7 @@
    </form>
 
 
-   <h3>Remove this band from Curl Up and Dye</h3>
+   <h3>Remove this band</h3>
    <form action="/bands/<%= @band.id() %>" method="post">
      <input type="hidden" name="_method" value="delete">
      <button type="submit">Remove band</button>
